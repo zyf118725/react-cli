@@ -1,0 +1,26 @@
+export const testfn = () => {
+  console.log('testfn');
+  test();
+};
+
+function test() {
+  let a = `发生的法氏囊另外一种分包的模式是splitChunk，通
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它test们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  过配置SplitChunks，你可以控制哪些模块应该被拆分，以及如何拆分它们。这有助于减小生成的JavaScript文件的大小，提高应用程序的性能，并降低加载时间。该插件webpack已经默认安装和集成，所以我们并不需要单独安装和直接使用该插件，只需要提供SplitChunksPlugin相关的配置信息即可。
+  `;
+  console.log(a);
+
+}
