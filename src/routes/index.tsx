@@ -16,18 +16,11 @@ const allRouteList = [
     component: lazy(() => import('@/pages/Home/index')),
   },
   {
-    path: '/goods',
-    name: '商品管理',
+    path: '/test',
+    name: '测试',
     icon: <AppstoreOutlined />,
     hidden: false,
-    children: [
-      {
-        path: '/goods/detail',
-        name: '详情',
-        hidden: false,
-        component: lazy(() => import('@/pages/Goods')),
-      },
-    ],
+    component: lazy(() => import('@/pages/Test/index')),
   },
   {
     path: '/m1',
@@ -37,13 +30,13 @@ const allRouteList = [
     children: [
       {
         path: '/m1/caidan1',
-        name: '菜单1',
+        name: '数据总览',
         hidden: false,
         component: lazy(() => import('@/pages/mud1/CaiDan1')),
       },
       {
         path: '/m1/caidan2',
-        name: '菜单2',
+        name: '数据提交',
         hidden: false,
         component: lazy(() => import('@/pages/mud1/CaiDan2')),
       },
