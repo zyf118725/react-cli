@@ -1,15 +1,13 @@
-import Home from '@/pages/Home';
-import { testfn } from '@/utils';
+import './App.css';
 
-function App() {
-  const a = 1;
+const App = () => {
+
   return (
-    <div className='page'>
-      我是react-App3
-      <Home />
-      <button onClick={testfn}>testfn</button>
-
+    <div className="content">
+      <h1 >Rsbuild with React</h1>
+      <p>Start building amazing things with Rsbuild.</p>
     </div>
   );
-}
+};
+
 export default App;

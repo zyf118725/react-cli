@@ -34,7 +34,7 @@ export default function Aside() {
   return (
     <div id="test-pro-layout" style={{ height: '100vh' }} >
       <ProLayout
-        title='权限引擎'
+        title='后台系统'
         // logo={Img.logo}
         siderWidth={216}
         fixSiderbar={true}

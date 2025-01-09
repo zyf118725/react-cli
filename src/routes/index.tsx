@@ -4,7 +4,7 @@ import { AppstoreOutlined } from "@ant-design/icons";
 // 路由或菜单的配置项
 const routerConfig = {
   defaultRoute: '/home',
-};
+}
 
 // 配置路由和菜单列表
 const allRouteList = [
@@ -13,14 +13,22 @@ const allRouteList = [
     name: '首页',
     icon: <AppstoreOutlined />,
     hidden: false,
-    component: lazy(() => import('@/pages/Home/index')),
+    component: lazy(() => import('@/pages/Home')),
   },
   {
-    path: '/test',
-    name: '测试',
+    path: '/goods',
+    name: '模块1',
     icon: <AppstoreOutlined />,
     hidden: false,
-    component: lazy(() => import('@/pages/Test/index')),
+    // Detail
+    children: [
+      {
+        path: '/goods/list',
+        name: '菜单1',
+        hidden: false,
+        component: lazy(() => import('@/pages/Goods')),
+      },
+    ]
   },
   {
     path: '/m1',
@@ -30,19 +38,39 @@ const allRouteList = [
     children: [
       {
         path: '/m1/caidan1',
-        name: '数据总览',
+        name: '菜单1',
         hidden: false,
         component: lazy(() => import('@/pages/mud1/CaiDan1')),
       },
       {
         path: '/m1/caidan2',
-        name: '数据提交',
+        name: '菜单2',
         hidden: false,
         component: lazy(() => import('@/pages/mud1/CaiDan2')),
       },
     ],
   },
-];
+  // {
+  //   path: '/m2',
+  //   name: '模块2',
+  //   icon: <AppstoreOutlined />,
+  //   hidden: false,
+  //   children: [
+  //     {
+  //       path: 'caidan21',
+  //       name: '菜单21',
+  //       hidden: false,
+  //       component: lazy(() => import('@/pages/mud2/CaiDan21')),
+  //     },
+  //     {
+  //       path: 'caidan22',
+  //       name: '菜单22',
+  //       hidden: false,
+  //       component: lazy(() => import('@/pages/mud2/CaiDan22')),
+  //     },
+  //   ],
+  // },
+]
 
 // 生成菜单列表
 function createMenuList(list: any) {
@@ -53,11 +81,11 @@ function createMenuList(list: any) {
     if (component) obj.component = <item.component />;
     if (icon) obj.icon = icon;
     if (children && children.length > 0) {
-      createMenuList(children);
+      createMenuList(children)
       obj.routes = createMenuList(children);
     }
     arr.push(obj);
-  });
+  })
   return arr;
 }
 
@@ -67,16 +95,16 @@ function createRoutes(list: any) {
   list.forEach((item: any) => {
     const obj: any = {
       path: item.path,
-    };
+    }
     if (item.component) {
       obj.element = item.component;
-      arr.push(obj);
+      arr.push(obj)
     }
     if (item.children) {
-      arr.push(...createRoutes(item.children));
+      arr.push(...createRoutes(item.children))
     };
-  });
-  return arr;
+  })
+  return arr
 }
 
 const menuList = createMenuList(allRouteList);
