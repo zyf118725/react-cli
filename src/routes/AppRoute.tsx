@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter as Router, Navigate, Routes, Route } from "react-router-dom";
 import { routes, routerConfig } from './index';
 import Layout from '@/pages/Layout';
@@ -19,5 +19,5 @@ export default function AppRoute() {
         </Route>
       </Routes>
     </Router>
-  )
+  );
 }

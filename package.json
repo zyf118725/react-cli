@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "rsbuild dev --open",
+    "start": "rsbuild dev --open",
     "build": "rsbuild build",
+    "lint": "eslint src --fix --ext .js,.jsx,.ts,.tsx",
     "preview": "rsbuild preview"
   },
   "dependencies": {
@@ -13,6 +15,7 @@
     "@rsbuild/plugin-less": "^1.1.0",
     "antd": "^5.23.0",
     "axios": "^1.7.9",
+    "eslint-plugin-typescript": "^0.14.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1"
@@ -22,6 +25,13 @@
     "@rsbuild/plugin-react": "^1.0.7",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.7.2"
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.20.0"
   }
 }

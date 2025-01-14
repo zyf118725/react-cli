@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import { goodsList } from '@/api'
+import React, { useEffect } from 'react';
+import { goodsList } from '@/api';
 
 export default function Home() {
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   // 获取数据
   const getData = async () => {
-    const res: any = await goodsList({})
+    const res: any = await goodsList({});
     console.log('res: ', res);
-  }
+  };
 
   return (
     <div>Home</div>
-  )
+  );
 }

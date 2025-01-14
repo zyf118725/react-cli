@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Dropdown, Space } from 'antd';
+import { Dropdown, Space } from 'antd';
 import type { MenuProps } from 'antd';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import './index.less';

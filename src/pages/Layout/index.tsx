@@ -7,7 +7,7 @@ import MyHeader from './Header';
 
 
 export default function Aside() {
-  const { goto, getPageParams } = useRoute();
+  const { goto } = useRoute();
   const [pathname, setPathname] = useState('');
   const defaultProps = {
     route: {
@@ -44,7 +44,7 @@ export default function Aside() {
         menu={{ defaultOpenAll: true, autoClose: false }}
         menuItemRender={(item, dom) => <div onClick={() => { setPathname(item.path || '/'); goto(item.path || '/'); }}>{dom}</div>}
         // 头部logo的点击事件
-        onMenuHeaderClick={(e) => goto('/')}
+        onMenuHeaderClick={() => goto('/')}
       >
         <MyHeader />
         <Outlet />

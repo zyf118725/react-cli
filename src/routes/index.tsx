@@ -4,7 +4,7 @@ import { AppstoreOutlined } from "@ant-design/icons";
 // 路由或菜单的配置项
 const routerConfig = {
   defaultRoute: '/home',
-}
+};
 
 // 配置路由和菜单列表
 const allRouteList = [
@@ -70,22 +70,22 @@ const allRouteList = [
   //     },
   //   ],
   // },
-]
+];
 
 // 生成菜单列表
 function createMenuList(list: any) {
   const arr: any = [];
-  list.forEach((item: any, i: number) => {
+  list.forEach((item: any) => {
     const { path, name, icon, component, children } = item;
     const obj: any = { path, name, };
     if (component) obj.component = <item.component />;
     if (icon) obj.icon = icon;
     if (children && children.length > 0) {
-      createMenuList(children)
+      createMenuList(children);
       obj.routes = createMenuList(children);
     }
     arr.push(obj);
-  })
+  });
   return arr;
 }
 
@@ -95,16 +95,16 @@ function createRoutes(list: any) {
   list.forEach((item: any) => {
     const obj: any = {
       path: item.path,
-    }
+    };
     if (item.component) {
       obj.element = item.component;
-      arr.push(obj)
+      arr.push(obj);
     }
     if (item.children) {
-      arr.push(...createRoutes(item.children))
+      arr.push(...createRoutes(item.children));
     };
-  })
-  return arr
+  });
+  return arr;
 }
 
 const menuList = createMenuList(allRouteList);
