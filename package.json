@@ -6,8 +6,17 @@
     "dev": "rsbuild dev --open",
     "start": "rsbuild dev --open",
     "build": "rsbuild build",
+    "preview": "rsbuild preview",
     "lint": "eslint src --fix --ext .js,.jsx,.ts,.tsx",
-    "preview": "rsbuild preview"
+    "lint:prettier": "prettier -c --write \"src/**/*\"",
+    "commitlint": "commitlint --config commitlint.config.js -e -V",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
@@ -21,15 +30,21 @@
     "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@rsbuild/core": "^1.1.8",
     "@rsbuild/plugin-react": "^1.0.7",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/parser": "^8.20.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "globals": "^15.14.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.20.0"
