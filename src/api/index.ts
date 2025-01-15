@@ -1,3 +1,3 @@
-import { get } from "./request";
+import { get } from '@/utils/request';
 
-export const goodsList = (params = {}) => get("/api/productlist", params); // 获取商品列表
+export const goodsList = (params = {}) => get('/api/productlist', params); // 获取商品列表
