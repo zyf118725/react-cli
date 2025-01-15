@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 import { ProLayout } from '@ant-design/pro-components';
 import useRoute from '@/hooks/useRoute';
 import { menuList } from '@/routes';
 import MyHeader from './Header';
-
 
 export default function Aside() {
   const { goto } = useRoute();
@@ -14,7 +13,7 @@ export default function Aside() {
       path: '/',
       routes: menuList,
     },
-    location: { pathname }
+    location: { pathname },
   };
 
   useEffect(() => {
@@ -28,27 +27,34 @@ export default function Aside() {
       colorTextMenu: '#595959',
       colorTextMenuSelected: 'rgba(42,122,251,1)',
       colorBgMenuItemSelected: 'rgba(230,243,254,1)',
-    }
+    },
   };
 
   return (
-    <div id="test-pro-layout" style={{ height: '100vh' }} >
+    <div id="test-pro-layout" style={{ height: '100vh' }}>
       <ProLayout
-        title='后台系统'
+        title="后台系统"
         // logo={Img.logo}
         siderWidth={216}
         fixSiderbar={true}
         {...defaultProps}
         token={menuStyle}
-        // 自动展开菜单项
         menu={{ defaultOpenAll: true, autoClose: false }}
-        menuItemRender={(item, dom) => <div onClick={() => { setPathname(item.path || '/'); goto(item.path || '/'); }}>{dom}</div>}
-        // 头部logo的点击事件
+        menuItemRender={(item, dom) => (
+          <div
+            onClick={() => {
+              setPathname(item.path || '/');
+              goto(item.path || '/');
+            }}
+          >
+            {dom}
+          </div>
+        )}
         onMenuHeaderClick={() => goto('/')}
       >
         <MyHeader />
         <Outlet />
       </ProLayout>
-    </div >
+    </div>
   );
 }

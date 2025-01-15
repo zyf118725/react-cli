@@ -1,15 +1,13 @@
-import React from 'react';
 import { Dropdown, Space } from 'antd';
 import type { MenuProps } from 'antd';
 import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
-import './index.less';
+import styles from './index.module.less';
 import useRoute from '@/hooks/useRoute';
 
 export default function MyHeader() {
   const { goto } = useRoute();
 
   function logout() {
-    console.log('退出');
     goto('/login');
     localStorage.clear();
   }
@@ -26,9 +24,9 @@ export default function MyHeader() {
   ];
 
   return (
-    <div className={`headerwrap`}>
+    <div className={styles.headerwrap}>
       <p></p>
-      <div className={`right`}>
+      <div className={styles.right}>
         <Dropdown className="action" menu={{ items }}>
           <Space>
             <UserOutlined />

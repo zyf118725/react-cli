@@ -3,7 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "rsbuild dev --open",
+    "dev": "rsbuild dev --open ",
+    "dev:test": "rsbuild dev --open --env-mode test",
+    "dev:prod": "rsbuild dev --open --env-mode prod",
     "start": "rsbuild dev --open",
     "build": "rsbuild build",
     "preview": "rsbuild preview",

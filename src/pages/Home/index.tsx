@@ -4,6 +4,7 @@ import { goodsList } from '@/api';
 export default function Home() {
   useEffect(() => {
     getData();
+    console.log('env', process.env.REACT_APP_ENV);
   }, []);
 
   // 获取数据
@@ -12,7 +13,5 @@ export default function Home() {
     console.log('res: ', res);
   };
 
-  return (
-    <div>Home</div>
-  );
+  return <div>Home</div>;
 }
