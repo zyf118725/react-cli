@@ -1,5 +1,5 @@
-import React, { lazy } from "react";
-import { AppstoreOutlined } from "@ant-design/icons";
+import { lazy } from 'react';
+import { AppstoreOutlined } from '@ant-design/icons';
 
 // 路由或菜单的配置项
 const routerConfig = {
@@ -14,21 +14,6 @@ const allRouteList = [
     icon: <AppstoreOutlined />,
     hidden: false,
     component: lazy(() => import('@/pages/Home')),
-  },
-  {
-    path: '/goods',
-    name: '模块1',
-    icon: <AppstoreOutlined />,
-    hidden: false,
-    // Detail
-    children: [
-      {
-        path: '/goods/list',
-        name: '菜单1',
-        hidden: false,
-        component: lazy(() => import('@/pages/Goods')),
-      },
-    ]
   },
   {
     path: '/m1',
@@ -50,26 +35,6 @@ const allRouteList = [
       },
     ],
   },
-  // {
-  //   path: '/m2',
-  //   name: '模块2',
-  //   icon: <AppstoreOutlined />,
-  //   hidden: false,
-  //   children: [
-  //     {
-  //       path: 'caidan21',
-  //       name: '菜单21',
-  //       hidden: false,
-  //       component: lazy(() => import('@/pages/mud2/CaiDan21')),
-  //     },
-  //     {
-  //       path: 'caidan22',
-  //       name: '菜单22',
-  //       hidden: false,
-  //       component: lazy(() => import('@/pages/mud2/CaiDan22')),
-  //     },
-  //   ],
-  // },
 ];
 
 // 生成菜单列表
@@ -77,7 +42,7 @@ function createMenuList(list: any) {
   const arr: any = [];
   list.forEach((item: any) => {
     const { path, name, icon, component, children } = item;
-    const obj: any = { path, name, };
+    const obj: any = { path, name };
     if (component) obj.component = <item.component />;
     if (icon) obj.icon = icon;
     if (children && children.length > 0) {
@@ -102,7 +67,7 @@ function createRoutes(list: any) {
     }
     if (item.children) {
       arr.push(...createRoutes(item.children));
-    };
+    }
   });
   return arr;
 }
