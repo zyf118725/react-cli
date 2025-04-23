@@ -20,7 +20,7 @@ export default function MyHeader() {
 
   return (
     <div className={styles.headerwrap}>
-      <p></p>
+      <div></div>
       <div className={styles.right}>
         <Dropdown className="action" menu={{ items }}>
           <Space>

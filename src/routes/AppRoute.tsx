@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Navigate, Routes, Route } from 'react-router-d
 import { routes, routerConfig } from './index';
 import Layout from '@/pages/Layout';
 import Login from '@/pages/Login';
-import '@/assets/reset.less';
 
 export default function AppRoute() {
   const MySuspense = (Dom: any) => <Suspense fallback={<p></p>}> {Dom} </Suspense>;
