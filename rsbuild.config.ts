@@ -10,7 +10,7 @@ export default defineConfig({
     pluginLess()
   ],
   server: {
-    port: 3344,
+    port: 3348,
     proxy: {
       '/api': {
         target: 'http://a.itying.com',
@@ -21,4 +21,7 @@ export default defineConfig({
   source: {
     define: publicVars,
   },
+  html: {
+    favicon: '/favicon.ico'
+  }
 });
