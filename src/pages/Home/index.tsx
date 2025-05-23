@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { goodsList } from '@/api';
-import Test from './Test';
 
 export default function Home() {
   useEffect(() => {
@@ -14,10 +13,5 @@ export default function Home() {
     console.log('res: ', res);
   };
 
-  return (
-    <>
-      Home
-      <Test />
-    </>
-  );
+  return <>Home</>;
 }

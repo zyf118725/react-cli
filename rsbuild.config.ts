@@ -22,6 +22,6 @@ export default defineConfig({
     define: publicVars,
   },
   html: {
-    favicon: '/favicon.ico'
+    favicon: './public/favicon.ico'
   }
 });

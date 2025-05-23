@@ -5,4 +5,8 @@ import { atomWithStorage } from 'jotai/utils';
 export const themeAtom = atom<any>(''); // 默认无
 
 // 2. 状态持久化用法-存用户信息
-export const userStore = atomWithStorage('user', 'zs');
+export const userStore = atomWithStorage('user', {});
+export const tokenStore = atomWithStorage('token', '');
+
+// 可用菜单paths
+export const menuPathsStore = atomWithStorage<any[]>('menuPaths', []);

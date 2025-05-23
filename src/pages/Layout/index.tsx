@@ -1,24 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
 import { ProLayout } from '@ant-design/pro-components';
 import useRoute from '@/hooks/useRoute';
-import { menuList } from '@/routes';
 import MyHeader from './Header';
 
-export default function Aside() {
+export default function Layout({ defaultProps, children }: any) {
   const { goto } = useRoute();
-  const [pathname, setPathname] = useState('');
-  const defaultProps = {
-    route: {
-      path: '/',
-      routes: menuList,
-    },
-    location: { pathname },
-  };
-
-  useEffect(() => {
-    setPathname(window.location.pathname);
-  }, []);
+  const [pathname, setPathname] = useState(window.location.pathname);
+  console.log('defaultProps: ', defaultProps);
 
   const menuStyle = {
     sider: {
@@ -31,30 +19,35 @@ export default function Aside() {
   };
 
   return (
-    <div id="test-pro-layout" style={{ height: '100vh' }}>
-      <ProLayout
-        title="后台系统"
-        // logo={Img.logo}
-        siderWidth={216}
-        fixSiderbar={true}
-        {...defaultProps}
-        token={menuStyle}
-        menu={{ defaultOpenAll: true, autoClose: false }}
-        menuItemRender={(item, dom) => (
-          <div
-            onClick={() => {
-              setPathname(item.path || '/');
-              goto(item.path || '/');
-            }}
-          >
-            {dom}
-          </div>
-        )}
-        onMenuHeaderClick={() => goto('/')}
-      >
-        <MyHeader />
-        <Outlet />
-      </ProLayout>
-    </div>
+    <>
+      <div id="test-pro-layout" style={{ height: '100vh' }}>
+        <ProLayout
+          title="后台系统"
+          // logo={Img.logo}
+          siderWidth={216}
+          fixSiderbar={true}
+          {...defaultProps}
+          // route={{path: '/', routes: menuList }}
+          location={{ pathname }}
+          token={menuStyle}
+          menu={{ defaultOpenAll: true, autoClose: false }}
+          menuItemRender={(item: any, dom: any) => (
+            <div
+              onClick={() => {
+                setPathname(item.path || '/');
+                goto(item.path || '/');
+              }}
+            >
+              {dom}
+            </div>
+          )}
+          onMenuHeaderClick={() => goto('/')}
+        >
+          <MyHeader />
+          {children}
+          {/* <Outlet /> */}
+        </ProLayout>
+      </div>
+    </>
   );
 }
