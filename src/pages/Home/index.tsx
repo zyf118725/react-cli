@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { goodsList } from '@/api';
+import { Button, message } from 'antd';
 
 export default function Home() {
   useEffect(() => {
     getData();
-    console.log('env', process.env.REACT_APP_ENV);
   }, []);
 
   // 获取数据
@@ -13,5 +13,10 @@ export default function Home() {
     console.log('res: ', res);
   };
 
-  return <>Home</>;
+  return (
+    <div>
+      Home
+      <Button onClick={() => message.success('成功')}>msg</Button>
+    </div>
+  );
 }
