@@ -6,7 +6,6 @@ let baseUrl = process.env.REACT_APP_BASEURL;
 console.log('baseUrl: ', baseUrl);
 
 const instance = axios.create({
-  baseURL: baseUrl,
   timeout: 100000,
 });
 

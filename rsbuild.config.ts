@@ -16,6 +16,10 @@ export default defineConfig({
         target: 'http://a.itying.com',
         pathRewrite: { '^/api': '' },
       },
+      '/nodeApi': {
+        target: 'http://localhost:5001',
+        pathRewrite: { '^/nodeApi': '/api' },
+      },
     },
   },
   source: {
