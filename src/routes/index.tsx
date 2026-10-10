@@ -42,27 +42,21 @@ export default function AppRoute() {
         {token ? (
           <>
             <Route path="/" element={<Navigate to={defaultRoute} replace />} />
-            {routes?.length &&
-              routes.map((route: any) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={
-                    <Layout defaultProps={defaultProps}>{MySuspense(<route.element />)}</Layout>
-                  }
-                />
-              ))}
+            <Route element={<Layout defaultProps={defaultProps} />}>
+              {routes?.length &&
+                routes.map((route: any) => (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    element={MySuspense(<route.element />)}
+                  />
+                ))}
+            </Route>
             {routes?.length > 0 && <Route path="*" element={<NotFoundPage />} />}
           </>
         ) : (
           <Route path="*" element={<Navigate to="/login" replace />} />
         )}
-        {/* 旧的写法 */}
-        {/* <Route path="/" element={<Layout defaultProps={defaultProps} />}>
-          {routes.map((route: any, i: number) => (
-            <Route key={i} path={route.path} element={MySuspense(<route.element />)} />
-          ))}
-        </Route> */}
       </Routes>
     </Router>
   );

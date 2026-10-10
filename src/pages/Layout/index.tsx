@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { ProLayout } from '@ant-design/pro-components';
 import useRoute from '@/hooks/useRoute';
 import MyHeader from './Header';
+import { Outlet } from 'react-router-dom';
 
-export default function Layout({ defaultProps, children }: any) {
+export default function Layout({ defaultProps }: any) {
   const { goto } = useRoute();
   const [pathname, setPathname] = useState(window.location.pathname);
   console.log('defaultProps: ', defaultProps);
@@ -27,7 +28,6 @@ export default function Layout({ defaultProps, children }: any) {
           siderWidth={216}
           fixSiderbar={true}
           {...defaultProps}
-          // route={{path: '/', routes: menuList }}
           location={{ pathname }}
           token={menuStyle}
           menu={{ defaultOpenAll: true, autoClose: false }}
@@ -44,8 +44,7 @@ export default function Layout({ defaultProps, children }: any) {
           onMenuHeaderClick={() => goto('/')}
         >
           <MyHeader />
-          {children}
-          {/* <Outlet /> */}
+          <Outlet />
         </ProLayout>
       </div>
     </>

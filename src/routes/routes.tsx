@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
 import { AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { Navigate } from 'react-router-dom';
 
 // 配置路由和菜单列表
 export const allRouteList: any[] = [
@@ -15,6 +16,10 @@ export const allRouteList: any[] = [
     name: '模块1',
     icon: <AppstoreOutlined />,
     children: [
+      {
+        path: '/m1',
+        component: () => <Navigate to="/m1/caidan1" replace />,
+      },
       {
         path: '/m1/caidan1',
         name: '菜单1',
